@@ -6,7 +6,7 @@
 /*   By: hefernan <hefernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 19:24:13 by hefernan          #+#    #+#             */
-/*   Updated: 2021/03/06 23:48:03 by hefernan         ###   ########.fr       */
+/*   Updated: 2021/03/07 21:04:20 by hefernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,16 @@ int					get_next_line(int fd, char **line)
 {
 	static char		*s[10240];
 	char			buf[BUFFER_SIZE + 1];
-	int				ret;
+	int				sto;
 	char			*tmp;
 
 	if (fd < 0 || !line || BUFFER_SIZE < 1 || read(fd, buf, 0) < 0)
 		return (ERROR);
 	if (!s[fd] && !(s[fd] = ft_calloc(1, sizeof(char *))))
 		return (ERROR);
-	while ((inter('\n', s[fd])) < 0 && (ret = read(fd, buf, BUFFER_SIZE)) > 0)
+	while ((inter('\n', s[fd])) < 0 && (sto = read(fd, buf, BUFFER_SIZE)) > 0)
 	{
-		buf[ret] = '\0';
+		buf[sto] = '\0';
 		s[fd] = ft_freestrjoin(s[fd], buf);
 	}
 	*line = ft_substr(s[fd], 0, ft_strlen(s[fd], 1));
@@ -41,7 +41,7 @@ int					get_next_line(int fd, char **line)
 	return (SUCCESS);
 }
 
-void	ft_putstr(char *str)
+/*void	ft_putstr(char *str)
 {
 	int i;
 
@@ -82,4 +82,4 @@ int		main(void)
 		printf("|%s|\n", line);
 		k++;
 	}
-}
+}*/
