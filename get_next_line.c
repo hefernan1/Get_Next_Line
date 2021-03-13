@@ -6,12 +6,12 @@
 /*   By: hefernan <hefernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 19:24:13 by hefernan          #+#    #+#             */
-/*   Updated: 2021/03/07 21:04:20 by hefernan         ###   ########.fr       */
+/*   Updated: 2021/03/13 22:56:20 by hefernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include <stdio.h>
+
 int					get_next_line(int fd, char **line)
 {
 	static char		*s[10240];
@@ -40,46 +40,3 @@ int					get_next_line(int fd, char **line)
 	free(tmp);
 	return (SUCCESS);
 }
-
-/*void	ft_putstr(char *str)
-{
-	int i;
-
-	i = 0;
-	while (str[i])
-	{
-		write(1, &str[i], 1);
-		i++;
-	}
-	write(1, "\n", 1);
-}
-
-int		main(void)
-{
-	int		fd;
-	char	*line;
-	int		i;
-	int		ret;
-	int df;
-	int ter;
-	int k;
-
-	i = 0;
-	k = 0;
-	fd = open("text.txt", O_RDONLY);
-	df = open("open.txt", O_RDONLY);
-	while (i < 10)
-	{
-		line = (char *)malloc(sizeof(*line) * 1);
-		ret = get_next_line(fd, &line);
-		printf("|%s|\n", line);
-		i++;
-	}
-	while (k < 10)
-	{
-		line = (char *)malloc(sizeof(*line) * 1);
-		ter = get_next_line(df, &line);
-		printf("|%s|\n", line);
-		k++;
-	}
-}*/

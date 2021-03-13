@@ -6,16 +6,12 @@
 /*   By: hefernan <hefernan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 19:24:39 by hefernan          #+#    #+#             */
-/*   Updated: 2021/03/06 19:01:31 by hefernan         ###   ########.fr       */
+/*   Updated: 2021/03/13 22:55:43 by hefernan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_BONUS_H
 # define GET_NEXT_LINE_BONUS_H
-
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 32
-# endif
 
 # define SUCCESS 1
 # define FINISH 0
